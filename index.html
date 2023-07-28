@@ -96,7 +96,6 @@
       background-color: #555;
     }
 
-
     .content {
       margin-top: 40px;
       margin-left: 15%; /* Add left margin to account for the vertical navigation bar width */
@@ -164,15 +163,40 @@
         line-height: 1.5;
       }
 
-      .vertical-nav {
+        .vertical-nav {
         width: 100%;
-        position: relative;
+        position: fixed;
         top: 0;
         left: 0;
+        height: 100%;
+        background-color: #04AA6D;
+        z-index: 1;
+        overflow-y: auto;
+        display: none;
+      }
+
+      .vertical-nav.active {
+        display: block;
       }
 
       .vertical-nav li {
         font-size: 20px;
+      }
+
+      .vertical-nav li a {
+        display: block;
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .vertical-nav li a.active {
+        background-color: #038557;
+      }
+
+      .vertical-nav li a:hover:not(.active) {
+        background-color: #555;
       }
 
       .toggle-nav-button {
